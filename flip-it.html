@@ -3,14 +3,13 @@
 <head lang="en">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Polymer para todos</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="bower_components/platform/platform.js"></script>
-    <link rel="import" href="bower_components/polymer/polymer.html"/>
 </head>
 <body>
-<polymer-element name="nacional-cards" noscript>
+<polymer-element name="flip-it"
+                 attributes="front reverse"
+                 noscript>
     <template>
         <style>
             .flip-cards {
@@ -42,7 +41,6 @@
             .front-card {
                 z-index: 2;
                 background-size: 250px 250px;
-                background: url('img/escudo.png') no-repeat;
 
             }
 
@@ -52,33 +50,15 @@
                 background-size: 250px 250px;
                 background-repeat: no-repeat;
             }
-
-            #card1 {
-                background-image: url('img/uy.jpg');
-            }
-
-            #card2 {
-                background-image: url('img/21.jpg');
-            }
-
-            #card3 {
-                background-image: url('img/decano.jpg');
-            }
         </style>
         <div class="flip-container">
             <div class="flip-cards">
-                <div class="front-card"></div>
-                <div class="reverse-card" id="card1"></div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="front-card"></div>
-                <div class="reverse-card" id="card2"></div>
-            </div>
-
-            <div class="flip-cards">
-                <div class="front-card"></div>
-                <div class="reverse-card" id="card3"></div>
+                <div class="front-card">
+                    <img src="{{front}}" alt=""/>
+                </div>
+                <div class="reverse-card">
+                    <img src="{{reverse}}" alt=""/>
+                </div>
             </div>
         </div>
     </template>
