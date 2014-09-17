@@ -5,19 +5,19 @@
 <polymer-element name="bolso-elements" noscript>
 	<template>
 		<style>
-			.box {
-				margin-top: 10%;
-				margin-bottom: 10%;
+			.div {
+				padding-left: 7%; 
+				padding-right: 7%;
 			}
 		</style>
 		<div horizontal justified layout cross-fade>
-			<div class="box" slide-up>
+			<div slide-up>
 				<round-it img="img/bandera.png"></round-it>
 			</div>
-			<div class="box" style="padding-left: 7%; padding-right: 7%" slide-down>
+			<div slide-down>
 				<flip-it front="img/uy.png" reverse="img/21.png"></flip-it>
 			</div>
-			<div class="box" slide-up>
+			<div slide-up>
 				<blur-it>
 					<img src="img/decano.png">
 				</blur-it>
