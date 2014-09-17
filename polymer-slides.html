@@ -10,6 +10,7 @@
 <link rel="import" href="bolso-elements.html">
 <link rel="import" href="polymer-setup.html">
 <link rel="import" href="using-elements.html">
+<link rel="import" href="about-me.html">
 
 <polymer-element name="polymer-slides">
 
@@ -46,7 +47,7 @@
         <section id="section" layout vertical>
             <paper-tabs selected="0" selectedindex="0" id="paper_tabs">
                 <paper-tab id="paper_tab" active><strong>Polymer para todos</strong></paper-tab>
-                <paper-tab id="paper_tab1">Introduction</paper-tab>
+                <paper-tab id="paper_tab1">About me</paper-tab>
                 <paper-tab id="paper_tab2">Why polymer?</paper-tab>
                 <paper-tab id="paper_tab3">Setting up polymer</paper-tab>
                 <paper-tab id="paper_tab4">Using elements</paper-tab>
@@ -62,9 +63,11 @@
                   notap 
                   id="core_animated_pages" 
                   transitions="cross-fade slide-up slide-down">
-                    <section id="polymer-para-todos">
+                    <section id="polymer-para-todos" layout horizontal center center-justified>
+                        <img src="img/ppt.png" cross-fade slide-up>
                     </section>
-                    <section id="introduction">
+                    <section id="about-me" layout horizontal center center-justified>
+                        <about-me vertical layout center center-justified cross-fade></about-me>
                     </section>
                     <section id="why-polymer">
                     </section>                    

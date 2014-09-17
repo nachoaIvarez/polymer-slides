@@ -1,0 +1,33 @@
+<polymer-element name="about-me" noscript>
+    <template>
+        <style>
+            img {
+                border-radius: 100%;
+            }
+
+            span{
+                font-size: 2em;
+                color: #333333;
+            } 
+            small{
+                font-size: 2em
+                color: #C3C3C3;
+            }
+
+        </style>
+        <img src="img/me.jpg" slide-down></img>
+        <br>
+        <span slide-down>Ignacio Alvarez</span>
+        <br>
+        <div vertical start-justified layout>
+            <small slide-up>Developer at Sophilabs</small>            
+            <small slide-up>I love music, sports and tech</small>
+            <small slide-up>Hincha del Club Nacional de Football</small>
+        </div>
+        <br>
+        <div horizontal center layout slide-up>
+            <img style="margin-right: 10px" src="img/git.png">
+            <small center>/nachoaivarez</small>
+        </div>
+    </template>
+</polymer-element>
