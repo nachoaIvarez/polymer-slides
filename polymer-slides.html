@@ -5,8 +5,10 @@
 <link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
 <link rel="import" href="bower_components/core-animated-pages/transitions/slide-down.html">
 <link rel="import" href="bower_components/core-animated-pages/transitions/slide-up.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
 <link rel="import" href="bower_components/core-animated-pages/transitions/tile-cascade.html">
 <link rel="import" href="bolso-elements.html">
+<link rel="import" href="polymer-setup.html">
 
 <polymer-element name="polymer-slides">
 
@@ -19,7 +21,6 @@
             #section {
                 width: 100%;
                 height: 100%;
-                border: 5px solid rgb(204, 204, 204);
                 left: 0px;
                 top: 0px;
                 position: absolute;
@@ -28,7 +29,7 @@
             #paper_tabs {
                 color: rgb(255, 255, 255);
                 box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 2px;
-                background-color: rgb(0, 188, 212);
+                background-color: rgb(255, 120, 77);
             }
 
             #core_animated_pages {
@@ -67,15 +68,16 @@
                     <section id="why-polymer">
                     </section>                    
                     <section id="setting-up-polymer">
-                    </section>                    
+                        <polymer-setup></polymer-setup>
+                    </section>
                     <section id="using-elements">
                     </section>                    
                     <section id="material-design">
                     </section>
                     <section id="creating-elements" layout horizontal center center-justified active>
-                        <div vertical layout center center-justified>
-                            <bolso-elements></bolso-elements>
-                        </div>
+                        <bolso-elements 
+                          vertical layout center center-justified>
+                        </bolso-elements>
                     </section>                    
                     <section id="setting-up-polymer">
                     </section>
