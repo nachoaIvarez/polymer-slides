@@ -1,0 +1,23 @@
+{
+  "name": "polymer-slides",
+  "version": "0.0.0",
+  "homepage": "https://github.com/nachoaIvarez/polymer-slides",
+  "authors": [
+    "Ignacio Alvarez <ialvarez@sophilabs.com>"
+  ],
+  "description": "Polymer slides to showcase polymer",
+  "keywords": [
+    "polymer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "~0.4.0"
+  }
+}

@@ -1,0 +1,108 @@
+<link rel="import" href="bower_components/paper-tabs/paper-tabs.html">
+<link rel="import" href="bower_components/paper-tabs/paper-tab.html">
+<link rel="import" href="bower_components/core-animated-pages/core-animated-pages.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/hero-transition.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/cross-fade.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/slide-down.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/slide-up.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/slide-from-right.html">
+<link rel="import" href="bower_components/core-animated-pages/transitions/tile-cascade.html">
+<link rel="import" href="bolso-elements.html">
+<link rel="import" href="polymer-setup.html">
+<link rel="import" href="using-elements.html">
+<link rel="import" href="about-me.html">
+<link rel="import" href="why-polymer.html">
+<link rel="import" href="material-design-elements.html">
+
+<polymer-element name="polymer-slides">
+
+    <template>
+        <style>
+            :host {
+                font-family: "Open Sans", serif;
+            }
+
+            #section {
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+            }
+
+            #paper_tabs {
+                color: rgb(255, 255, 255);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 2px;
+                background-color: rgb(255, 120, 77);
+            }
+
+            #core_animated_pages {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: rgb(238, 238, 238);
+            }
+        </style>
+        <section id="section" layout vertical>
+            <paper-tabs selected="0" selectedindex="0" id="paper_tabs">
+                <paper-tab id="paper_tab" active><strong>Polymer para todos</strong></paper-tab>
+                <paper-tab id="paper_tab1">About me</paper-tab>
+                <paper-tab id="paper_tab2">Why polymer?</paper-tab>
+                <paper-tab id="paper_tab3">Setting up polymer</paper-tab>
+                <paper-tab id="paper_tab4">Using elements</paper-tab>
+                <paper-tab id="paper_tab5">Material design</paper-tab>
+                <paper-tab id="paper_tab6" active>Creating elements</paper-tab>
+                <paper-tab id="paper_tab7">Thanks!</paper-tab>
+            </paper-tabs>
+            <section id="section1" flex relative>
+                <core-animated-pages 
+                  selected="{{ $.paper_tabs.selected }}" 
+                  lastselected="0" 
+                  selectedindex="0" 
+                  notap 
+                  id="core_animated_pages" 
+                  transitions="cross-fade slide-up slide-down">
+                    <section id="polymer-para-todos" layout horizontal center center-justified>
+                        <img src="img/ppt.png" cross-fade slide-up>
+                    </section>
+                    <section id="about-me" layout horizontal center center-justified>
+                        <about-me vertical layout center center-justified cross-fade></about-me>
+                    </section>
+                    <section id="why-polymer">
+                        <why-polymer layout center center-justified cross-fade></why-polymer>
+                    </section>                    
+                    <section id="setting-up-polymer">
+                        <polymer-setup></polymer-setup>
+                    </section>
+                    <section id="using-elements">
+                        <using-elements></using-elements>
+                    </section>                    
+                    <section id="material-design" layout horizontal center center-justified>
+                        <span style="margin-right: 20px">Material design showcase</span>
+                        <material-design-elements vertical layout center center-justified cross-fade>
+                        </material-design-elements>
+                    </section>
+                    <section id="creating-elements" layout horizontal center center-justified active>
+                        <bolso-elements vertical layout center center-justified>
+                        </bolso-elements>
+                    </section>                    
+                    <section id="thanks" layout horizontal center center-justified active>
+                        <span style="font-size: 5em; color: 333333" vertical layout center center-justified cross-fade slide-up>Thanks :)</span>
+                    </section>
+                </core-animated-pages>
+            </section>
+        </section>
+    </template>
+
+    <script>
+
+        Polymer('polymer-slides', {
+
+        });
+
+    </script>
+
+</polymer-element>

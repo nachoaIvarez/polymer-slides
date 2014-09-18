@@ -1,0 +1,93 @@
+<polymer-element name="polymer-setup" noscript>
+
+    <template>
+        <style>
+            #section {
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+            }
+
+            #paper_tabs {
+                color: rgb(255, 255, 255);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 2px;
+                height: 30px;
+                background-color: rgba(117, 0, 172, 0.72);
+            }
+
+            #core_animated_pages {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: rgba(233, 211, 185, 0.55);
+            }
+
+            img{
+                max-height: 30%;
+                width: auto;
+                margin-bottom: 50px;
+            }
+            span {
+                font-size: 1.3em;
+                color: #343434;
+            }
+
+            code {
+                font-size: 1.5em;
+                color: #444444;
+                background-color: #CCCCCC;
+            }
+
+        </style>
+        <section id="section" layout vertical>
+            <paper-tabs nobar selected="0" selectedindex="0" id="paper_tabs" slide-down>
+                <paper-tab id="paper_tab" active>node.js</paper-tab>
+                <paper-tab id="paper_tab1">npm</paper-tab>
+                <paper-tab id="paper_tab2">bower</paper-tab>                            
+                <paper-tab id="paper_tab3">polymer</paper-tab>
+            </paper-tabs>
+            <section id="section1" flex relative>
+                <core-animated-pages 
+                  selected="{{ $.paper_tabs.selected }}" 
+                  lastselected="0" 
+                  selectedindex="0" 
+                  notap 
+                  id="core_animated_pages" 
+                  transitions="cross-fade slide-from-right" cross-fade>
+
+                    <section id="node" vertical layout center center-justified>                                
+                        <img src="img/node.svg" cross-fade slide-from-right>
+                        <span>Install from node.js official website or find a package manager with updated version.</span>
+                    </section>
+
+                    <section id="npm" vertical layout center center-justified>                                
+                        <img src="img/npm.png" cross-fade slide-from-right>
+                        <span>NPM goes for Node Package Manager. </span>
+                        <span>Usually, we relate NPM with server modules and other strictlly programming-related packages.</span>
+                        <span>But also, it's the simplest way to install front-end developer's holy grial:</span>
+                    </section>
+
+                    <section id="bower" vertical layout center center-justified>                                
+                        <img src="img/bower-logo.png" cross-fade slide-from-right>
+                        <span>Bower. The package manager for front-end developers.</span>
+                        <br/>
+                        <code>$ npm install -g bower </code>
+                    </section>
+
+                    <section id="polymer" vertical layout center center-justified>
+                        <img src="img/polymer.svg" cross-fade slide-from-right>
+                        <code>$ bower init </code>
+                        <br/>
+                        <code>$ bower install polymer </code>
+                    </section>
+                    
+                </core-animated-pages>
+            </section>
+        </section>
+    </template>
+</polymer-element>

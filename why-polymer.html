@@ -1,0 +1,129 @@
+<polymer-element name="why-polymer" noscript>
+
+    <template>
+        <style>
+            #section {
+                width: 100%;
+                height: 100%;
+                left: 0px;
+                top: 0px;
+                position: absolute;
+            }
+
+            #paper_tabs {
+                color: rgb(255, 255, 255);
+                box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 2px;
+                height: 30px;
+                background-color: #7D99FF;
+            }
+
+            #core_animated_pages {
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                position: absolute;
+                top: 0px;
+                left: 0px;
+                background-color: rgba(233, 211, 185, 0.55);
+            }
+
+            img{
+                max-height: 30%;
+                width: auto;
+                margin-bottom: 50px;
+            }
+            span {
+                font-size: 2em;
+                color: #343434;
+            }
+
+            small {
+                font-size: 1.6em;
+                color: #343434;
+            }
+            }
+
+            code {
+                font-size: 1.5em;
+                color: #444444;
+                background-color: #CCCCCC;
+            }
+
+        </style>
+        <section id="section" layout vertical>
+            <paper-tabs nobar selected="0" selectedindex="0" id="paper_tabs" slide-down>
+                <paper-tab id="paper_tab" active>encapsulation</paper-tab>
+                <paper-tab id="paper_tab1">control</paper-tab>
+                <paper-tab id="paper_tab2">reuse</paper-tab>                            
+                <paper-tab id="paper_tab3">semantics</paper-tab> 
+            </paper-tabs>
+            <section id="section1" flex relative>
+                <core-animated-pages 
+                  selected="{{ $.paper_tabs.selected }}" 
+                  lastselected="0" 
+                  selectedindex="0" 
+                  notap 
+                  id="core_animated_pages" 
+                  transitions="cross-fade slide-from-right" cross-fade>
+
+                    <section id="encapsulation" vertical layout center center-justified> 
+                        <div vertical start-justified layout cross-fade slide-from-right>
+                            <span>With web components the time has come for us to <strong>encapsulate</strong> our HTML</span>
+                            <br>                         
+                            <i><span>» Bye super-mega-hyper specific CSS classes.</span></i>
+                            <i><span>» Bye styling conflicts.</span></i>
+                            <i><span>» Bye scripts conflicts.</span></i>
+                            <i><span>» Bye div soups.</span></i>
+                            <i><span>» Bye repeating ourselves again and again.</span></i>
+                            <i><span>» Bye messing with implementation in order to achieve specification.</span></i>
+                        </div>
+                    </section>
+
+                    <section id="control" vertical layout center center-justified>                                
+                        <div vertical start-justified layout cross-fade slide-from-right>
+                            <span>With web components, we have <strong>full control</strong> of whatever happens inside our element.</span>
+                        </div>       
+                        <br>                                 
+                        <br>                         
+                        <div vertical start-justified layout cross-fade slide-from-right>
+                            <i><small>We don't need to think about how outside elements and their</small></i>
+                            <i><small>own styles and scripts would affect our element, and viceversa.</small></i>
+                            <br>
+                            <i><small>If inside our element we define:</small></i>
+                            <span><code>h1 { color:red; }</code></span>
+                            <i><small>outer <code>h1</code> will remain the color they were, inside, they will be red.</small></i>
+                        </div>        
+                    </section>
+
+                    <section id="reuse" vertical layout center center-justified>                                
+                        <div vertical start-justified layout cross-fade slide-from-right>
+                            <span>Thanks to web components workflow and structure, they are super <strong>reusable</strong></span>
+                            <br>
+                            <div vertical start-justified layout cross-fade slide-from-right>
+                                <i><small>Just by importing the html file, and calling the HTML tag, the element will be shown in your document.</small></i>
+                                <br>
+                                <i><small>Dead simple.</small></i>
+                                <br>
+                                <i><small>Bye frankeinstein-driven web development.</small></i>                          
+                                <br>
+                                <i><small>We just plug functional things together.</small></i>
+                            </div>  
+                        </div>
+                    </section>
+
+                    <section id="semantics" vertical layout center center-justified>
+                        <span>We define our HTML tag names. This allow us to be super <strong>expressive</strong> and <strong>semantic</strong></span>
+                        <br>
+                        <div vertical start-justified layout cross-fade slide-from-right>
+                            <i><small>No more div soup!</small></i>
+                            <br>
+                            <i><small>Bye super specific css styling. </small></i>
+                            <br>
+                            <i><small>Welcome declarative tags.</small></i>
+                        </div>  
+                    </section>
+                </core-animated-pages>
+            </section>
+        </section>
+    </template>
+</polymer-element>
