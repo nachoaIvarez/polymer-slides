@@ -11,6 +11,8 @@
 <link rel="import" href="polymer-setup.html">
 <link rel="import" href="using-elements.html">
 <link rel="import" href="about-me.html">
+<link rel="import" href="why-polymer.html">
+<link rel="import" href="material-design-elements.html">
 
 <polymer-element name="polymer-slides">
 
@@ -70,6 +72,7 @@
                         <about-me vertical layout center center-justified cross-fade></about-me>
                     </section>
                     <section id="why-polymer">
+                        <why-polymer layout center center-justified cross-fade></why-polymer>
                     </section>                    
                     <section id="setting-up-polymer">
                         <polymer-setup></polymer-setup>
@@ -77,13 +80,17 @@
                     <section id="using-elements">
                         <using-elements></using-elements>
                     </section>                    
-                    <section id="material-design">
+                    <section id="material-design" layout horizontal center center-justified>
+                        <span style="margin-right: 20px">Material design showcase</span>
+                        <material-design-elements vertical layout center center-justified cross-fade>
+                        </material-design-elements>
                     </section>
                     <section id="creating-elements" layout horizontal center center-justified active>
                         <bolso-elements vertical layout center center-justified>
                         </bolso-elements>
                     </section>                    
-                    <section id="setting-up-polymer">
+                    <section id="thanks" layout horizontal center center-justified active>
+                        <span style="font-size: 5em; color: 333333" vertical layout center center-justified cross-fade slide-up>Thanks :)</span>
                     </section>
                 </core-animated-pages>
             </section>
