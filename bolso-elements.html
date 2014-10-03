@@ -1,9 +1,16 @@
 <link rel="import" href="flip-it.html">
 <link rel="import" href="blur-it.html">
 <link rel="import" href="round-it.html">
+<link rel="import" href="bower_components/core-ajax/core-ajax.html"/>
 
 <polymer-element name="bolso-elements" noscript>
 	<template>
+		<core-ajax auto
+		           url="https://intense-fire-4619.firebaseio.com/jotason.json"
+		           handleAs="json"
+		           response="{{response}}"
+		           on-core-response="{{change}}">
+		</core-ajax>
 		<style>
 			.div {
 				padding-left: 7%; 
@@ -11,17 +18,30 @@
 			}
 		</style>
 		<div horizontal justified layout cross-fade>
-			<div slide-up>
+			<div id="mas_grande" slide-up>
 				<round-it img="img/bandera.png"></round-it>
 			</div>
-			<div slide-down>
+			<div id="mas_laureado" slide-down>
 				<flip-it front="img/uy.png" reverse="img/21.png"></flip-it>
 			</div>
-			<div slide-up>
+			<div id="decano" slide-up>
 				<blur-it>
 					<img src="img/decano.png">
 				</blur-it>
 			</div>
 		</div>
 	</template>
+	<script>
+
+	    Polymer('bolso-elements', { 
+	    	change: function req(event, response){
+            	console.log(response);
+	    		this.$.mas_grande.style.visibility = this.response.nacional.mas_grande ? 'visible' : 'hidden';
+	    		this.$.mas_laureado.style.visibility = this.response.nacional.mas_laureado ? 'visible' : 'hidden';
+	    		this.$.decano.style.visibility = this.response.nacional.decano ? 'visible' : 'hidden';
+	    		
+		    }
+	    });
+
+	</script>
 </polymer-element>
