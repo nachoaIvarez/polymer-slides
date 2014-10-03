@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Polymer para todos</title>
+    <meta name="description" content="Slides for Polymer talk in MVD Web Design Meetup">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="bower_components/platform/platform.js"></script>
+    <link rel="import" href="bower_components/core-ajax/core-ajax.html"/>
+</head>
+<body>
+	<polymer-element name="ajax-example">
+
+	  <template>	    
+		<core-ajax auto
+		           url="https://intense-fire-4619.firebaseio.com/response.json"
+		           handleAs="json"
+		           response="{{response}}"
+		           on-core-response="{{change}}">		           
+		</core-ajax>
+		<span id="hola">{{response.nacional.decano}}</span>
+	  </template>
+
+	  <script>
+
+	    Polymer({ 
+	    	change: function(event, response){
+	    		console.log(this.response);
+	    		this.$.hola.css.display = this.response.nacional.decano ? 'block' : 'none';
+		    }
+	    });
+
+	  </script>
+
+	</polymer-element>
+	<ajax-example></ajax-example>
+</body>
+</html>
